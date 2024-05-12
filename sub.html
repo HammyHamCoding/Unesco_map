@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>유네스코 문화유산 추천</title>
+        
+        <link rel="stylesheet" href="styles.css">
+        <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=xh9gmkda64"></script>
+
+    </head>
+    <body>
+        <header class="container-fluid">
+            <h1>유네스코 문화유산 지도</h1>
+        </header>
+        <nav class="container-fluid">
+            <ul>
+                <li><a href="./index.html">소개</a></li>
+                <li><a href="./sub.html">나만의 유네스코 여행지도 만들기</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="form-description">
+                <p>
+                    Please enter the place you want to go.
+                </p>
+                <p>
+                    Using your decision as a background, we will provide the best route of travel
+                </p>
+            </div>
+            <form id="heritageForm">
+                <label for="region">Select location:</label>
+                <select id="region" name="region">
+                    <option>서울특별시</option>
+                    <option>강원도</option>
+                    <option>경기도</option>
+                </select>
+
+                <label for="number">Number you want us to recomend:</label>
+                <select id="number" name="number">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </form>
+
+            <div id="results"></div>
+            <div id="map" style="width:100%;height:400px;"></div>
+
+        </main>
+        <footer class="container">
+            <small>© 2024 유네스코 문화유산 지도</small>
+        </footer>
+        <script>
+            var mapOptions = {
+                center: new naver.maps.LatLng(37.3595704, 127.105399),
+                zoom: 10
+            };
+            
+            var map = new naver.maps.Map('map', mapOptions);
+            </script>
+
+    </body>
+</html>
